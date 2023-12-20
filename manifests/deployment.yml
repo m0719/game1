@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mgamedefault 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mgamedefault
+  template:
+    metadata:
+      labels:
+        app: mgamedefault 
+    spec:
+      containers:
+        - name: mgamedefault 
+          image: azdevapp.azurecr.io/mgamedefault
+          ports:
+          - containerPort: 80
